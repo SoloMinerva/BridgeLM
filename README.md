@@ -11,7 +11,7 @@
 | | **自研链路** | **Qwen 迁移链路** |
 |:--:|:---:|:---:|
 | **规模** | 31.7M 参数 | 1.55B 参数 |
-| **技术栈** | 纯 PyTorch（从零自实现） | HF / PEFT / vLLM |
+| **技术栈** | 纯 PyTorch（从零自实现） | HF / PEFT |
 | **数据源** | MiniMind pretrain 127万条 + SFT 90万条 | InstructIE 171K → SFT 28.5K |
 | **核心能力** | Tokenizer → Pretrain → SFT → LoRA → KV Cache 推理 | 数据 Pipeline → LoRA 微调 → 自动评测 |
 | **LoRA 效率** | **0.83%** 可训练参数（1.0 MB） | **0.14%** 可训练参数（8.3 MB） |

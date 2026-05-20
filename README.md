@@ -1,10 +1,6 @@
-﻿# BridgeLM
+# BridgeLM
 
 轻量级 LLM 训练、微调与评测全链路项目。
-
-## 从零搭建一个能训练、能微调、能推理的完整 LLM 链路
-
-涵盖 tokenizer 训练、语料处理、pretrain、SFT、LoRA、推理优化与评测，每一个环节亲手实现。
 
 [自研链路](#自研链路--31m-参数) · [Qwen 迁移](#迁移链路--qwen25-15b) · [快速开始](#快速开始) · [文档](#详细文档)
 
@@ -32,7 +28,6 @@ flowchart TB
     A4 --> A5["SFT / LoRA 微调<br/>0.83% 参数"]
     A5 --> A6["KV Cache 推理<br/>加速 3.27x"]
     A6 --> A7["chat.py REPL"]
-
 
     B --> B1["InstructIE 171K 条"]
     B1 --> B2["6步数据Pipeline<br/>标准化→过滤→分层→派生→采样→转写"]
@@ -81,6 +76,38 @@ flowchart TB
 
 ---
 
+## 快速开始
+
+### 安装
+
+```bash
+git clone https://github.com/SoloMinerva/BridgeLM.git
+cd BridgeLM
+python -m venv .venv
+source .venv/bin/activate        # Linux/Mac
+# .venv\Scripts\activate         # Windows
+
+pip install -e ".[all]"          # 推荐：包含全部依赖
+```
+
+| 安装方式 | 命令 | 适用场景 |
+|:---:|:---:|:---:|
+| 核心依赖 | `pip install -e .` | 仅自研链路（纯 PyTorch） |
+| +Qwen 链路 | `pip install -e ".[qwen]"` | +transformers, peft, datasets |
+| +开发测试 | `pip install -e ".[dev]"` | +pytest |
+| **全部安装** | **`pip install -e ".[all]"`** | **推荐** |
+
+可选：`pip install modelscope`（国内下载数据）
+
+### 验证
+
+```bash
+pytest tests/                                                           # 跑通测试
+python scripts/train_pretrain.py --config configs/pretrain_smoke.json  # smoke 最小链路
+```
+
+---
+
 ## 详细文档
 
 完整中文文档位于 [`Readme/`](Readme/) 目录：
@@ -99,7 +126,7 @@ flowchart TB
 ---
 
 <details>
-<summary><strong>目录结构</strong> （点击展开）</summary>
+<summary><strong>目录结构</strong>（点击展开）</summary>
 
 ```
 BridgeLM/
@@ -129,102 +156,14 @@ BridgeLM/
 
 </details>
 
----
-
-## 快速开始
-
-### 安装
-
-```bash
-git clone https://github.com/SoloMinerva/BridgeLM.git
-cd BridgeLM
-python -m venv .venv
-source .venv/bin/activate        # Linux/Mac
-# .venv\Scripts\activate         # Windows
-
-pip install -e ".[all]"          # 推荐：包含全部依赖
-```
-
-| 安装方式 | 命令 | 适用场景 |
-|:---:|:---:|:---:|
-| 核心依赖 | `pip install -e .` | 仅自研链路（纯 PyTorch） |
-| +Qwen 链路 | `pip install -e ".[qwen]"` | +transformers, peft, datasets |
-| +开发测试 | `pip install -e ".[dev]"` | +pytest |
-| **全部安装** | **`pip install -e ".[all]"`** | **推荐** |
-
-可选：`pip install modelscope`（国内下载数据）
-
-### 验证
-
-```bash
-pytest tests/                                            # 跑通测试
-python scripts/train_pretrain.py --config configs/pretrain_smoke.json  # smoke 最小链路
-```
-
 <details>
-<summary><strong>数据准备</strong> （点击展开下载说明）</summary>
+<summary><strong>完整训练流程</strong>（从原始数据到正式产物，点击展开）</summary>
 
-仓库仅包含 `data/smoke/` 和 `data/sft_smoke/` 小型测试数据。完整训练数据需自行下载：
-
-**MiniMind** — 预训练 + SFT 对话数据（自研链路）
-
-```bash
-pip install huggingface_hub
-
-mkdir -p data data/minimind_sft/gongjy/minimind_dataset
-
-python - <<'PY'
-from huggingface_hub import hf_hub_download
-
-hf_hub_download(
-    repo_id="jingyaogong/minimind_dataset",
-    repo_type="dataset",
-    filename="pretrain_t2t_mini.jsonl",
-    local_dir="data",
-)
-hf_hub_download(
-    repo_id="jingyaogong/minimind_dataset",
-    repo_type="dataset",
-    filename="sft_t2t_mini.jsonl",
-    local_dir="data/minimind_sft/gongjy/minimind_dataset",
-)
-PY
-```
-
-当前 MiniMind 数据集已不再提供旧版 `pretrain_hq.jsonl`。本项目现使用并已验证兼容的文件为：
-
-- 预训练：`data/pretrain_t2t_mini.jsonl`
-- SFT：`data/minimind_sft/gongjy/minimind_dataset/sft_t2t_mini.jsonl`
-
-来源：[jingyaogong/minimind](https://github.com/jingyaogong/minimind)
-
-**InstructIE** — 结构化信息抽取数据（Qwen 迁移链路）
-
-```bash
-pip install datasets
-python -c "from datasets import load_dataset; load_dataset('zjunlp/InstructIE')"
-```
-来源：[zjunlp/InstructIE](https://huggingface.co/datasets/zjunlp/InstructIE)
-
-**基座模型**
-
-从 [HuggingFace](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct) 下载 `Qwen2.5-1.5B-Instruct` 至项目根目录。
-
-> 详细处理流程见 [`data/README.md`](data/README.md)
-
-</details>
-
----
-
-## 从原始数据到正式产物
-
-下面这组命令按 **项目阶段** 排列，适合从一个全新 clone 的仓库出发，逐步生成正式训练产物。
+下面这组命令按**项目阶段**排列，适合从一个全新 clone 的仓库出发，逐步生成正式训练产物。
 
 ### 自研 BridgeLM 主线（阶段 A → B）
 
 **阶段 A0 — 下载原始数据**
-
-对应项目阶段：原始输入准备
 
 ```bash
 pip install huggingface_hub
@@ -253,9 +192,9 @@ PY
 - `data/pretrain_t2t_mini.jsonl`
 - `data/minimind_sft/gongjy/minimind_dataset/sft_t2t_mini.jsonl`
 
-**阶段 A1 — 预训练语料清洗与切分**
+来源：[jingyaogong/minimind](https://github.com/jingyaogong/minimind)
 
-对应项目阶段：MiniMind 原始语料 → `pretrain_clean/`
+**阶段 A1 — 预训练语料清洗与切分**
 
 ```bash
 python scripts/prepare_pretrain_jsonl.py \
@@ -269,15 +208,9 @@ python scripts/prepare_pretrain_jsonl.py \
   --clean-html
 ```
 
-产物：
-- `data/pretrain_clean/train.txt`
-- `data/pretrain_clean/valid.txt`
-- `data/pretrain_clean/tokenizer_corpus.txt`
-- `data/pretrain_clean/metadata.json`
+产物：`data/pretrain_clean/train.txt` · `valid.txt` · `tokenizer_corpus.txt` · `metadata.json`
 
 **阶段 A2 — 构造 tokenizer 训练样本**
-
-对应项目阶段：为 BPE 训练准备轻量样本
 
 ```bash
 python - <<'PY'
@@ -292,75 +225,53 @@ with src.open("rb") as fsrc, dst.open("wb") as fdst:
 PY
 ```
 
-产物：
-- `data/pretrain_clean/tokenizer_sample.txt`
+产物：`data/pretrain_clean/tokenizer_sample.txt`
 
 **阶段 A3 — 训练 BPE tokenizer**
-
-对应项目阶段：Tokenizer 训练
 
 ```bash
 python scripts/train_tokenizer.py --config configs/tokenizer_full_clean.json
 ```
 
-产物：
-- `outputs/tokenizer_full_clean/vocab.json`
-- `outputs/tokenizer_full_clean/merge.txt`
+产物：`outputs/tokenizer_full_clean/vocab.json` · `merge.txt`
 
 **阶段 A4 — 将全文预训练语料编码成 token IDs**
-
-对应项目阶段：文本语料 → `.npy` token IDs
 
 ```bash
 python scripts/tokenize_corpus_fast.py --config configs/tokenize_full_corpus.json --workers 8 --parts 32
 ```
 
-产物：
-- `data/pretrain_clean/tokenized_full/train_ids.npy`
-- `data/pretrain_clean/tokenized_full/valid_ids.npy`
-- `data/pretrain_clean/tokenized_full/metadata.json`
+产物：`data/pretrain_clean/tokenized_full/train_ids.npy` · `valid_ids.npy` · `metadata.json`
 
 **阶段 B1 — 正式预训练**
-
-对应项目阶段：Pretrain
 
 ```bash
 python scripts/train_pretrain.py --config configs/pretrain_full_corpus.json
 ```
 
-产物：
-- `outputs/pretrain_full_corpus/ckpt_final.pt`
-- `outputs/pretrain_full_corpus/model_config.json`
+产物：`outputs/pretrain_full_corpus/ckpt_final.pt` · `model_config.json`
 
 **阶段 B2 — 正式 SFT（全参）**
-
-对应项目阶段：SFT 微调
 
 ```bash
 python scripts/train_sft.py --config configs/sft_baseline.json
 ```
 
-产物：
-- `outputs/sft_baseline/ckpt_final.pt`
-- `outputs/sft_baseline/train_log.jsonl`
+产物：`outputs/sft_baseline/ckpt_final.pt` · `train_log.jsonl`
 
 **阶段 B3 — 正式 SFT（LoRA）**
-
-对应项目阶段：LoRA 微调
 
 ```bash
 python scripts/train_sft.py --config configs/sft_baseline.json --use-lora
 ```
 
-产物：
-- `outputs/sft_lora/lora_adaptor.pt`
-- `outputs/sft_lora/train_log.jsonl`
+产物：`outputs/sft_lora/lora_adaptor.pt` · `train_log.jsonl`
+
+---
 
 ### Qwen 迁移主线（阶段 C → D）
 
 **阶段 C0 — 下载原始数据与基座模型**
-
-对应项目阶段：结构化输出链路的原始输入准备
 
 ```bash
 pip install huggingface_hub
@@ -385,16 +296,11 @@ snapshot_download(
 PY
 ```
 
-原始输入：
-- `data/instructie/train_zh.json`
-- `data/instructie/valid_zh.json`
-- `data/instructie/test_zh.json`
-- `data/instructie/schema_zh.json`
-- `Qwen2.5-1.5B-Instruct/`
+原始输入：`data/instructie/` · `Qwen2.5-1.5B-Instruct/`
+
+来源：[zjunlp/InstructIE](https://huggingface.co/datasets/zjunlp/InstructIE) · [Qwen2.5-1.5B-Instruct](https://huggingface.co/Qwen/Qwen2.5-1.5B-Instruct)
 
 **阶段 C1 — 运行 InstructIE 六步数据 pipeline**
-
-对应项目阶段：原始抽取数据 → `sft_candidate/`
 
 ```bash
 python scripts/01_normalize.py
@@ -405,39 +311,29 @@ python scripts/05_stratified_sample.py
 python scripts/06_to_chat_jsonl.py
 ```
 
-产物：
-- `data/processed/*.jsonl`
-- `data/sft_candidate/train.jsonl`
-- `data/sft_candidate/valid.jsonl`
-- `data/sft_candidate/metadata.json`
+产物：`data/sft_candidate/train.jsonl` · `valid.jsonl` · `metadata.json`
 
 **阶段 D1 — Qwen LoRA 正式训练**
-
-对应项目阶段：Qwen 迁移 + 结构化输出微调
 
 ```bash
 python scripts/train_qwen_lora.py --config configs/qwen_lora_structured.json
 ```
 
-产物：
-- `outputs/qwen_lora/adaptor_final/`
-- `outputs/qwen_lora/best_adaptor/`
-- `outputs/qwen_lora/train_log.jsonl`
+产物：`outputs/qwen_lora/adaptor_final/` · `best_adaptor/` · `train_log.jsonl`
 
 **阶段 D2 — 导出合并后的最终模型**
-
-对应项目阶段：LoRA 合并导出
 
 ```bash
 python scripts/export_final_model.py
 ```
 
-产物：
-- `outputs/qwen_lora_merged_final/`
+产物：`outputs/qwen_lora_merged_final/`
+
+---
 
 ### 最小验证顺序
 
-如果只想先确认环境和数据路径无误，不直接跑正式长任务，推荐按下面顺序验证：
+如果只想先确认环境和数据路径无误，推荐按下面顺序验证：
 
 ```bash
 pytest tests/
@@ -445,6 +341,10 @@ python scripts/train_pretrain.py --config configs/pretrain_smoke.json
 python scripts/train_sft.py --config configs/sft_smoke.json
 python scripts/train_qwen_lora.py --config configs/qwen_lora_structured_smoke.json
 ```
+
+> 详细数据处理流程见 [`data/README.md`](data/README.md)
+
+</details>
 
 ---
 

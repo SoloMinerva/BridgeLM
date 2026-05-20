@@ -8,7 +8,7 @@
 
 ## 两线并行
 
-| | **自研 BridgeLM 链路** | **Qwen 迁移链路** |
+| | **自研链路** | **Qwen 迁移链路** |
 |:--:|:---:|:---:|
 | **规模** | 31.7M 参数 | 1.55B 参数 |
 | **技术栈** | 纯 PyTorch（从零自实现） | HF / PEFT / vLLM |
@@ -18,7 +18,7 @@
 
 ```mermaid
 flowchart TB
-    A["自研 BridgeLM 链路<br/>31.7M · 纯 PyTorch"]
+    A["自研链路<br/>31.7M · 纯 PyTorch"]
     B["Qwen 迁移链路<br/>1.55B · HF / PEFT"]
 
     A --> A1["MiniMind ~127万条"]

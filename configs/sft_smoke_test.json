@@ -1,0 +1,50 @@
+{
+  "name": "sft_smoke_test",
+  "description": "Smoke test for improved SFT: 50 steps, grad_accum=2, warmup=5.",
+  "tokenizer": {
+    "vocab_path": "outputs/tokenizer_full_clean/vocab.json",
+    "merges_path": "outputs/tokenizer_full_clean/merge.txt",
+    "special_tokens": ["<|endoftext|>"]
+  },
+  "model": {
+    "vocab_size": 6400,
+    "context_length": 512,
+    "d_model": 512,
+    "num_layers": 8,
+    "num_heads": 8,
+    "d_ff": 1344,
+    "rope_theta": 1000000.0,
+    "use_rms_norm": true,
+    "norm_mode": "pre",
+    "ffn_type": "swiglu"
+  },
+  "optimizer": {
+    "lr": 2e-5,
+    "min_lr": 2e-6,
+    "warmup_steps": 5,
+    "weight_decay": 0.1
+  },
+  "training": {
+    "batch_size": 2,
+    "gradient_accumulation_steps": 2,
+    "max_steps": 50,
+    "eval_interval": 10,
+    "save_interval": 50,
+    "device": "cuda",
+    "seed": 42,
+    "out_dir": "outputs/sft_smoke_test",
+    "init_checkpoint": "outputs/pretrain_full_corpus/ckpt_final.pt",
+    "resume": false
+  },
+  "data": {
+    "train_data_path": "data/sft_smoke/train.jsonl",
+    "valid_data_path": "data/sft_smoke/valid.jsonl",
+    "system_prompt_ratio": 0.0,
+    "eos_token": "<|endoftext|>"
+  },
+  "logging": {
+    "wandb_project": "micro-llm",
+    "run_name": "sft_smoke_test",
+    "mode": "disabled"
+  }
+}

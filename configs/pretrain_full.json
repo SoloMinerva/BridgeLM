@@ -1,0 +1,39 @@
+﻿{
+  "name": "pretrain_full",
+  "description": "Pretrain BridgeLM 31.7M on cleaned full MiniMind corpus (323M tokens).",
+  "model": {
+    "vocab_size": 6400,
+    "context_length": 512,
+    "d_model": 512,
+    "num_layers": 8,
+    "num_heads": 8,
+    "d_ff": 1344,
+    "rope_theta": 1000000.0,
+    "use_rms_norm": true,
+    "norm_mode": "pre",
+    "ffn_type": "swiglu"
+  },
+  "optimizer": {
+    "lr": 0.0003,
+    "min_lr": 3e-05,
+    "warmup_iters": 1000,
+    "max_norm": 1.0,
+    "weight_decay": 0.1
+  },
+  "training": {
+    "batch_size": 24,
+    "max_iters": 20000,
+    "device": "cuda",
+    "seed": 42,
+    "out_dir": "outputs/pretrain_full"
+  },
+  "data": {
+    "train_data_path": "data/pretrain_clean/tokenized_full/train_ids.npy",
+    "valid_data_path": "data/pretrain_clean/tokenized_full/valid_ids.npy"
+  },
+  "logging": {
+    "wandb_project": "micro-llm",
+    "run_name": "pretrain_full",
+    "mode": "disabled"
+  }
+}

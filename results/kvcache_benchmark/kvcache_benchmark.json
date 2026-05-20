@@ -1,0 +1,248 @@
+{
+  "benchmark_config": {
+    "checkpoint": "outputs\\sft_1k_b8\\ckpt_final.pt",
+    "device": "cuda",
+    "dtype": "float32",
+    "vocab_size": 6400,
+    "d_model": 512,
+    "num_layers": 8,
+    "context_length": 512,
+    "warmup_runs": 2,
+    "bench_runs": 5,
+    "prompt_lengths": [
+      16,
+      32,
+      64,
+      128,
+      256
+    ],
+    "gen_lengths": [
+      32,
+      64,
+      128,
+      256
+    ]
+  },
+  "results": [
+    {
+      "prompt_len": 16,
+      "gen_len": 32,
+      "no_cache_time_s": 0.3805,
+      "no_cache_tps": 84.1,
+      "cache_total_time_s": 0.3498,
+      "cache_prefill_time_s": 0.0138,
+      "cache_decode_time_s": 0.336,
+      "cache_decode_tps": 95.3,
+      "speedup": 1.09
+    },
+    {
+      "prompt_len": 16,
+      "gen_len": 64,
+      "no_cache_time_s": 0.6782,
+      "no_cache_tps": 94.4,
+      "cache_total_time_s": 0.6329,
+      "cache_prefill_time_s": 0.0135,
+      "cache_decode_time_s": 0.6195,
+      "cache_decode_tps": 103.3,
+      "speedup": 1.07
+    },
+    {
+      "prompt_len": 16,
+      "gen_len": 128,
+      "no_cache_time_s": 1.2964,
+      "no_cache_tps": 98.7,
+      "cache_total_time_s": 1.1982,
+      "cache_prefill_time_s": 0.0097,
+      "cache_decode_time_s": 1.1885,
+      "cache_decode_tps": 107.7,
+      "speedup": 1.08
+    },
+    {
+      "prompt_len": 16,
+      "gen_len": 256,
+      "no_cache_time_s": 2.7844,
+      "no_cache_tps": 91.9,
+      "cache_total_time_s": 2.3788,
+      "cache_prefill_time_s": 0.009,
+      "cache_decode_time_s": 2.3698,
+      "cache_decode_tps": 108.0,
+      "speedup": 1.17
+    },
+    {
+      "prompt_len": 32,
+      "gen_len": 32,
+      "no_cache_time_s": 0.3464,
+      "no_cache_tps": 92.4,
+      "cache_total_time_s": 0.3126,
+      "cache_prefill_time_s": 0.0111,
+      "cache_decode_time_s": 0.3015,
+      "cache_decode_tps": 106.1,
+      "speedup": 1.11
+    },
+    {
+      "prompt_len": 32,
+      "gen_len": 64,
+      "no_cache_time_s": 0.6473,
+      "no_cache_tps": 98.9,
+      "cache_total_time_s": 0.5894,
+      "cache_prefill_time_s": 0.0095,
+      "cache_decode_time_s": 0.5799,
+      "cache_decode_tps": 110.4,
+      "speedup": 1.1
+    },
+    {
+      "prompt_len": 32,
+      "gen_len": 128,
+      "no_cache_time_s": 1.2858,
+      "no_cache_tps": 99.6,
+      "cache_total_time_s": 1.1741,
+      "cache_prefill_time_s": 0.0093,
+      "cache_decode_time_s": 1.1648,
+      "cache_decode_tps": 109.9,
+      "speedup": 1.1
+    },
+    {
+      "prompt_len": 32,
+      "gen_len": 256,
+      "no_cache_time_s": 2.7968,
+      "no_cache_tps": 91.5,
+      "cache_total_time_s": 2.3383,
+      "cache_prefill_time_s": 0.0098,
+      "cache_decode_time_s": 2.3285,
+      "cache_decode_tps": 109.9,
+      "speedup": 1.2
+    },
+    {
+      "prompt_len": 64,
+      "gen_len": 32,
+      "no_cache_time_s": 0.3149,
+      "no_cache_tps": 101.6,
+      "cache_total_time_s": 0.2892,
+      "cache_prefill_time_s": 0.0092,
+      "cache_decode_time_s": 0.28,
+      "cache_decode_tps": 114.3,
+      "speedup": 1.09
+    },
+    {
+      "prompt_len": 64,
+      "gen_len": 64,
+      "no_cache_time_s": 0.6232,
+      "no_cache_tps": 102.7,
+      "cache_total_time_s": 0.584,
+      "cache_prefill_time_s": 0.0091,
+      "cache_decode_time_s": 0.5749,
+      "cache_decode_tps": 111.3,
+      "speedup": 1.07
+    },
+    {
+      "prompt_len": 64,
+      "gen_len": 128,
+      "no_cache_time_s": 1.3041,
+      "no_cache_tps": 98.2,
+      "cache_total_time_s": 1.1733,
+      "cache_prefill_time_s": 0.0095,
+      "cache_decode_time_s": 1.1638,
+      "cache_decode_tps": 110.0,
+      "speedup": 1.11
+    },
+    {
+      "prompt_len": 64,
+      "gen_len": 256,
+      "no_cache_time_s": 2.9669,
+      "no_cache_tps": 86.3,
+      "cache_total_time_s": 2.3628,
+      "cache_prefill_time_s": 0.0103,
+      "cache_decode_time_s": 2.3526,
+      "cache_decode_tps": 108.8,
+      "speedup": 1.26
+    },
+    {
+      "prompt_len": 128,
+      "gen_len": 32,
+      "no_cache_time_s": 0.3411,
+      "no_cache_tps": 93.8,
+      "cache_total_time_s": 0.2955,
+      "cache_prefill_time_s": 0.0095,
+      "cache_decode_time_s": 0.2859,
+      "cache_decode_tps": 111.9,
+      "speedup": 1.15
+    },
+    {
+      "prompt_len": 128,
+      "gen_len": 64,
+      "no_cache_time_s": 0.6973,
+      "no_cache_tps": 91.8,
+      "cache_total_time_s": 0.5946,
+      "cache_prefill_time_s": 0.0092,
+      "cache_decode_time_s": 0.5854,
+      "cache_decode_tps": 109.3,
+      "speedup": 1.17
+    },
+    {
+      "prompt_len": 128,
+      "gen_len": 128,
+      "no_cache_time_s": 1.4607,
+      "no_cache_tps": 87.6,
+      "cache_total_time_s": 1.1771,
+      "cache_prefill_time_s": 0.0096,
+      "cache_decode_time_s": 1.1675,
+      "cache_decode_tps": 109.6,
+      "speedup": 1.24
+    },
+    {
+      "prompt_len": 128,
+      "gen_len": 256,
+      "no_cache_time_s": 3.2556,
+      "no_cache_tps": 78.6,
+      "cache_total_time_s": 2.3391,
+      "cache_prefill_time_s": 0.0094,
+      "cache_decode_time_s": 2.3297,
+      "cache_decode_tps": 109.9,
+      "speedup": 1.39
+    },
+    {
+      "prompt_len": 256,
+      "gen_len": 32,
+      "no_cache_time_s": 0.4624,
+      "no_cache_tps": 69.2,
+      "cache_total_time_s": 0.298,
+      "cache_prefill_time_s": 0.0122,
+      "cache_decode_time_s": 0.2858,
+      "cache_decode_tps": 112.0,
+      "speedup": 1.55
+    },
+    {
+      "prompt_len": 256,
+      "gen_len": 64,
+      "no_cache_time_s": 0.9235,
+      "no_cache_tps": 69.3,
+      "cache_total_time_s": 0.5891,
+      "cache_prefill_time_s": 0.0117,
+      "cache_decode_time_s": 0.5774,
+      "cache_decode_tps": 110.8,
+      "speedup": 1.57
+    },
+    {
+      "prompt_len": 256,
+      "gen_len": 128,
+      "no_cache_time_s": 1.8833,
+      "no_cache_tps": 68.0,
+      "cache_total_time_s": 1.1698,
+      "cache_prefill_time_s": 0.0109,
+      "cache_decode_time_s": 1.1589,
+      "cache_decode_tps": 110.4,
+      "speedup": 1.61
+    },
+    {
+      "prompt_len": 256,
+      "gen_len": 256,
+      "no_cache_time_s": 3.81,
+      "no_cache_tps": 67.2,
+      "cache_total_time_s": 2.4232,
+      "cache_prefill_time_s": 0.01,
+      "cache_decode_time_s": 2.4132,
+      "cache_decode_tps": 106.1,
+      "speedup": 1.57
+    }
+  ]
+}

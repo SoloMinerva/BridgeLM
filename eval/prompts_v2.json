@@ -1,0 +1,275 @@
+{
+  "description": "Eval prompts v2: replaced factual QA with reasoning, replaced raw text continuation with instruction-format writing tasks, extended max_new_tokens to 256.",
+  "generation_params": {
+    "temperature": 0.8,
+    "top_p": 0.9,
+    "max_new_tokens": 256,
+    "seed": 42
+  },
+  "prompts": [
+    {
+      "id": "reason_01",
+      "category": "推理问答",
+      "conversations": [
+        {"role": "user", "content": "小明比小红大3岁，小红今年10岁，请问小明几岁？"}
+      ]
+    },
+    {
+      "id": "reason_02",
+      "category": "推理问答",
+      "conversations": [
+        {"role": "user", "content": "如果今天是周三，再过5天是星期几？"}
+      ]
+    },
+    {
+      "id": "reason_03",
+      "category": "推理问答",
+      "conversations": [
+        {"role": "user", "content": "一个正方形的周长是24厘米，它的面积是多少平方厘米？"}
+      ]
+    },
+    {
+      "id": "reason_04",
+      "category": "推理问答",
+      "conversations": [
+        {"role": "user", "content": "甲比乙跑得快，乙比丙跑得快，三个人中谁跑得最慢？"}
+      ]
+    },
+    {
+      "id": "reason_05",
+      "category": "推理问答",
+      "conversations": [
+        {"role": "user", "content": "如果每天读15页书，读完一本300页的书需要多少天？"}
+      ]
+    },
+    {
+      "id": "reason_06",
+      "category": "推理问答",
+      "conversations": [
+        {"role": "user", "content": "买3个苹果花了9元，买5个同样的苹果需要多少钱？"}
+      ]
+    },
+    {
+      "id": "reason_07",
+      "category": "推理问答",
+      "conversations": [
+        {"role": "user", "content": "一个水桶能装10升水，现在有35升水，至少需要几个桶才能装完？"}
+      ]
+    },
+    {
+      "id": "reason_08",
+      "category": "推理问答",
+      "conversations": [
+        {"role": "user", "content": "小红有12颗糖，送给小明4颗后，又自己买了6颗，现在小红有多少颗糖？"}
+      ]
+    },
+    {
+      "id": "expr_01",
+      "category": "中文表达与总结",
+      "conversations": [
+        {"role": "user", "content": "用三句话概括《西游记》的故事。"}
+      ]
+    },
+    {
+      "id": "expr_02",
+      "category": "中文表达与总结",
+      "conversations": [
+        {"role": "user", "content": "请简单解释什么是人工智能。"}
+      ]
+    },
+    {
+      "id": "expr_03",
+      "category": "中文表达与总结",
+      "conversations": [
+        {"role": "user", "content": "用一句话总结《三国演义》的主题。"}
+      ]
+    },
+    {
+      "id": "expr_04",
+      "category": "中文表达与总结",
+      "conversations": [
+        {"role": "user", "content": "用通俗的语言解释什么是光合作用。"}
+      ]
+    },
+    {
+      "id": "expr_05",
+      "category": "中文表达与总结",
+      "conversations": [
+        {"role": "user", "content": "请用两句话介绍唐朝的历史地位。"}
+      ]
+    },
+    {
+      "id": "expr_06",
+      "category": "中文表达与总结",
+      "conversations": [
+        {"role": "user", "content": "简要概括《红楼梦》的主要故事线索。"}
+      ]
+    },
+    {
+      "id": "expr_07",
+      "category": "中文表达与总结",
+      "conversations": [
+        {"role": "user", "content": "用三句话解释什么是云计算。"}
+      ]
+    },
+    {
+      "id": "instr_01",
+      "category": "指令遵循",
+      "conversations": [
+        {"role": "user", "content": "请列出三种水果的名称。"}
+      ]
+    },
+    {
+      "id": "instr_02",
+      "category": "指令遵循",
+      "conversations": [
+        {"role": "user", "content": "请用JSON格式输出三个中国城市的名称。"}
+      ]
+    },
+    {
+      "id": "instr_03",
+      "category": "指令遵循",
+      "conversations": [
+        {"role": "user", "content": "把下面的句子翻译成英文：今天天气很好。"}
+      ]
+    },
+    {
+      "id": "instr_04",
+      "category": "指令遵循",
+      "conversations": [
+        {"role": "user", "content": "请按从大到小的顺序排列以下数字：3, 17, 8, 42, 1。"}
+      ]
+    },
+    {
+      "id": "instr_05",
+      "category": "指令遵循",
+      "conversations": [
+        {"role": "user", "content": "请列出五个以「春」字开头的成语。"}
+      ]
+    },
+    {
+      "id": "instr_06",
+      "category": "指令遵循",
+      "conversations": [
+        {"role": "user", "content": "请用三个形容词描述大海。"}
+      ]
+    },
+    {
+      "id": "instr_07",
+      "category": "指令遵循",
+      "conversations": [
+        {"role": "user", "content": "请将以下句子改写成疑问句：今天天气很好。"}
+      ]
+    },
+    {
+      "id": "multi_01",
+      "category": "多轮对话",
+      "conversations": [
+        {"role": "user", "content": "你好，请介绍一下你自己。"},
+        {"role": "assistant", "content": "你好！我是一个AI助手，可以回答各种问题。"},
+        {"role": "user", "content": "那你能做什么？"}
+      ]
+    },
+    {
+      "id": "multi_02",
+      "category": "多轮对话",
+      "conversations": [
+        {"role": "user", "content": "李白是哪个朝代的诗人？"},
+        {"role": "assistant", "content": "李白是唐朝著名的浪漫主义诗人，被誉为\"诗仙\"。"},
+        {"role": "user", "content": "他最有名的诗是哪首？"}
+      ]
+    },
+    {
+      "id": "multi_03",
+      "category": "多轮对话",
+      "conversations": [
+        {"role": "user", "content": "我想学习Python编程，有什么建议吗？"},
+        {"role": "assistant", "content": "建议从基础语法开始学习，先掌握变量、循环和函数的概念。"},
+        {"role": "user", "content": "那有没有推荐的入门书籍？"}
+      ]
+    },
+    {
+      "id": "multi_04",
+      "category": "多轮对话",
+      "conversations": [
+        {"role": "user", "content": "北京今天天气怎么样？"},
+        {"role": "assistant", "content": "抱歉，我无法获取实时天气信息。建议您查看天气预报应用。"},
+        {"role": "user", "content": "那你能告诉我北京一般在几月份最热吗？"}
+      ]
+    },
+    {
+      "id": "multi_05",
+      "category": "多轮对话",
+      "conversations": [
+        {"role": "user", "content": "请帮我写一封邮件给老师请假。"},
+        {"role": "assistant", "content": "好的，请问您要请假几天？原因是什么？"},
+        {"role": "user", "content": "请假两天，因为感冒了需要休息。"}
+      ]
+    },
+    {
+      "id": "multi_06",
+      "category": "多轮对话",
+      "conversations": [
+        {"role": "user", "content": "中国有多少个省级行政区？"},
+        {"role": "assistant", "content": "中国共有34个省级行政区，包括23个省、5个自治区、4个直辖市和2个特别行政区。"},
+        {"role": "user", "content": "其中四个直辖市分别是哪里？"}
+      ]
+    },
+    {
+      "id": "write_01",
+      "category": "写作任务",
+      "conversations": [
+        {"role": "user", "content": "请写一首关于秋天的四行诗。"}
+      ]
+    },
+    {
+      "id": "write_02",
+      "category": "写作任务",
+      "conversations": [
+        {"role": "user", "content": "请写一段50字左右的自我介绍。"}
+      ]
+    },
+    {
+      "id": "write_03",
+      "category": "写作任务",
+      "conversations": [
+        {"role": "user", "content": "请写一封简短的道歉信，原因是你迟到了。"}
+      ]
+    },
+    {
+      "id": "write_04",
+      "category": "写作任务",
+      "conversations": [
+        {"role": "user", "content": "请写一个简短的故事，主角是一只聪明的小猫。"}
+      ]
+    },
+    {
+      "id": "write_05",
+      "category": "写作任务",
+      "conversations": [
+        {"role": "user", "content": "请用三句话描述你心中理想的城市。"}
+      ]
+    },
+    {
+      "id": "write_06",
+      "category": "写作任务",
+      "conversations": [
+        {"role": "user", "content": "请写一段关于友谊的感悟，不超过100字。"}
+      ]
+    },
+    {
+      "id": "write_07",
+      "category": "写作任务",
+      "conversations": [
+        {"role": "user", "content": "请给一位即将参加高考的同学写一句鼓励的话。"}
+      ]
+    },
+    {
+      "id": "write_08",
+      "category": "写作任务",
+      "conversations": [
+        {"role": "user", "content": "请写一段介绍北京的文字，不超过80字。"}
+      ]
+    }
+  ]
+}

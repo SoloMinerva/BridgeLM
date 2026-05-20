@@ -1,0 +1,378 @@
+{
+  "sft_1k_b8": {
+    "checkpoint": "outputs\\sft_1k_b8\\ckpt_final.pt",
+    "generation_params": {
+      "temperature": 0.8,
+      "top_p": 0.9,
+      "max_new_tokens": 128,
+      "seed": 42
+    },
+    "results": [
+      {
+        "id": "qa_01",
+        "category": "基础问答",
+        "input": [
+          {
+            "role": "user",
+            "content": "中国的首都是哪里？"
+          }
+        ],
+        "output": "中国的首都是中国的首都是北京，但也以其独特的文化、独特的文化内涵和独特的文化内涵而著称。中国的首都是北京，但也以其独特的文化内涵和独特的文化内涵而著称。\n\n例如，中国的首都是北京，但也以其独特的文化内涵和独特的文化内涵而著称。北京作为中国的首都，吸引着无数游客前来观赏。例如，中国的长城，如故宫、故宫等，其历史可以追溯到中国，而故宫则以其独特的文化内涵和独特的文化",
+        "output_tokens": 128,
+        "latency_s": 2.82
+      },
+      {
+        "id": "qa_02",
+        "category": "基础问答",
+        "input": [
+          {
+            "role": "user",
+            "content": "地球上最大的海洋是什么？"
+          }
+        ],
+        "output": "地球上最大的海洋是原始的。\n\n### 原始的理由\n\n在宇宙中，最大的海洋是原始的。\n\n  \n地球是第三大的海洋，是太阳的五大海洋。\n\n### 原始的理由\n\n地球是第三大的海洋，是地球的总体积。\n\n  \n地球是第三大的海洋，是太阳的五大洋。\n  \n地球是太阳系中最大的海洋。\n  \n地球是太阳系中最大的行星，是太阳系中最大的行星。\n\n### 原始的理由\n\n",
+        "output_tokens": 128,
+        "latency_s": 1.398
+      },
+      {
+        "id": "qa_03",
+        "category": "基础问答",
+        "input": [
+          {
+            "role": "user",
+            "content": "一年有多少天？闰年呢？"
+          }
+        ],
+        "output": "闰年，闰年有4天。闰年就是4天。****\n************************************************************************************************************************************************************:** ************** *********** ** *********。**********************",
+        "output_tokens": 128,
+        "latency_s": 1.323
+      },
+      {
+        "id": "expr_01",
+        "category": "中文表达与总结",
+        "input": [
+          {
+            "role": "user",
+            "content": "用三句话概括《西游记》的故事。"
+          }
+        ],
+        "output": "《西游记》的故事主要围绕着西游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游记大游",
+        "output_tokens": 128,
+        "latency_s": 1.359
+      },
+      {
+        "id": "expr_02",
+        "category": "中文表达与总结",
+        "input": [
+          {
+            "role": "user",
+            "content": "请简单解释什么是人工智能。"
+          }
+        ],
+        "output": "人工智能是一种利用算法和模型来实现技术的一种方法。它涉及对数据进行处理、识别和学习。简而言之，人工智能是一种模拟人类智能的技术，可以实现类似于人类智慧的领域。\n\n人工智能的应用非常广泛，包括但不限于自然语言处理、图像识别、机器翻译、语音识别、推荐系统、自动驾驶、语音识别、智能家居、推荐系统、自动驾驶、机器翻译、语音识别、自动驾驶等。\n\n人工智能的应用范围非常广泛，包括但不限于语音识别、自然语言处理、图像识别、自动驾驶、机器人、语音识别、机器翻译、自动驾驶、机器翻译、语音识别、自动驾驶、语音助手、自动驾驶、推荐系统、自动驾驶",
+        "output_tokens": 128,
+        "latency_s": 1.38
+      },
+      {
+        "id": "expr_03",
+        "category": "中文表达与总结",
+        "input": [
+          {
+            "role": "user",
+            "content": "用一句话总结《三国演义》的主题。"
+          }
+        ],
+        "output": "《三国演义》的主题是“三国演义”。\n\n### 三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义》\n\n《三国演义",
+        "output_tokens": 128,
+        "latency_s": 1.312
+      },
+      {
+        "id": "instr_01",
+        "category": "指令遵循",
+        "input": [
+          {
+            "role": "user",
+            "content": "请列出三种水果的名称。"
+          }
+        ],
+        "output": "草莓，苹果，橙子，橙子，橙子，葡萄，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子。橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，橙子，",
+        "output_tokens": 128,
+        "latency_s": 1.362
+      },
+      {
+        "id": "instr_02",
+        "category": "指令遵循",
+        "input": [
+          {
+            "role": "user",
+            "content": "请用JSON格式输出三个中国城市的名称。"
+          }
+        ],
+        "output": "JSON格式输出如下：\n\n```\nlst1 = [[[[[[[[[[[[[[[[[]]]]]]]]]\n```\n\nStart2 = [[[[[[[[[]]]]]]\n\n```\n\n### 示例\n\nlst1 = [[[[[[[[]]]]]]\n### 示例\n\nlst2 = [[[[[[]]]],[[[[]]]]\n",
+        "output_tokens": 128,
+        "latency_s": 1.41
+      },
+      {
+        "id": "instr_03",
+        "category": "指令遵循",
+        "input": [
+          {
+            "role": "user",
+            "content": "把下面的句子翻译成英文：今天天气很好。"
+          }
+        ],
+        "output": "This is a test cut off.\n\nTo cut off \n\nThis is a test cut off.\n\n\nEnsure the test cut off.\n\n\nAnswer the yes are you great,\n\n\nI'll cut off.\n\n\nThis is a test cut off.\n\n\n\nI'll cut off.\n\n\nI'll cut off.\n\n\n\n\nI'll cut off.\n",
+        "output_tokens": 128,
+        "latency_s": 1.327
+      },
+      {
+        "id": "multi_01",
+        "category": "多轮对话",
+        "input": [
+          {
+            "role": "user",
+            "content": "你好，请介绍一下你自己。"
+          },
+          {
+            "role": "assistant",
+            "content": "你好！我是一个AI助手，可以回答各种问题。"
+          },
+          {
+            "role": "user",
+            "content": "那你能做什么？"
+          }
+        ],
+        "output": "当然可以！我是一个AI，没有具体的经验或技能。不过，我可以为你提供一些关键点或建议。\n\n当然，我可以提供一些帮助！\n\n1. **保持联系**：使用电子邮件或社交媒体保持联系。确保有帮助并回复你的内容。\n\n2. **保持联系**：与家人或朋友保持联系，分享你的信息和想法。\n\n3. **使用社交媒体**：避免与他人没有关系。使用社交媒体，如Facebook、Instagram等，减少或使用社交媒体。\n\n4. **使用社交媒体**：与",
+        "output_tokens": 128,
+        "latency_s": 1.354
+      },
+      {
+        "id": "multi_02",
+        "category": "多轮对话",
+        "input": [
+          {
+            "role": "user",
+            "content": "李白是哪个朝代的诗人？"
+          },
+          {
+            "role": "assistant",
+            "content": "李白是唐朝著名的浪漫主义诗人，被誉为\"诗仙\"。"
+          },
+          {
+            "role": "user",
+            "content": "他最有名的诗是哪首？"
+          }
+        ],
+        "output": "李白，唐代诗人，以其豪迈、豪迈、豪迈、豪迈、豪迈、豪迈等众多著名著名诗人。\n\n### 例子\n\n\n1. 李白 (李白)    \n2. 杜甫 (李白)  \n3. 唐朝 (李白)  \n4. 杜甫 (李白)  \n5. 杜甫 (李白)  \n6. 杜甫 (李白)  \n\n- 杜",
+        "output_tokens": 128,
+        "latency_s": 1.341
+      },
+      {
+        "id": "cont_01",
+        "category": "续写",
+        "input": "春天的早晨，阳光洒在小村庄的屋顶上，",
+        "output": "高大的树木在阳光下闪烁着金色的光芒。阳光洒在林间，稻穗犹如一幅色彩斑斓的画卷，缓缓地披上了一片细长的光，仿佛在诉说着一个温馨与温暖的故事。在夕阳的余晖下，柔和的阳光洒在金色的天空中，仿佛在诉说着在阳光下醒来的午后。在这宁静的夜景中，一个闪耀的星星在夜晚闪烁着微光，将星空中的星星点点点点缀在夜晚。夜晚的星星在云层上闪烁着，",
+        "output_tokens": 128,
+        "latency_s": 1.408
+      },
+      {
+        "id": "cont_02",
+        "category": "续写",
+        "input": "从前有一座山，山上有一座庙，庙里有一个老和尚和一个小和尚。",
+        "output": "他们相遇并决定前往山。山上有一座庙，其中有一座庙和一个庙，庙里住着一朵花。庙里住着一位老和尚，他对它的形象和优雅有好奇心。老和尚和小尚都感到非常自豪，他一同买下这个庙，好奇地向着老和尚。这位老和尚和小尚都很感兴趣，因此他们决定一起去探索这个庙里。老和尚和小尚都深深地吸引着年轻的老和尚，他们终于找到了自己的小心。老和尚",
+        "output_tokens": 128,
+        "latency_s": 1.493
+      }
+    ],
+    "total_time_s": 19.29,
+    "avg_latency_s": 1.484
+  },
+  "lora_1k_b8": {
+    "checkpoint": "outputs\\pretrain_full_corpus\\ckpt_final.pt",
+    "generation_params": {
+      "temperature": 0.8,
+      "top_p": 0.9,
+      "max_new_tokens": 128,
+      "seed": 42
+    },
+    "results": [
+      {
+        "id": "qa_01",
+        "category": "基础问答",
+        "input": [
+          {
+            "role": "user",
+            "content": "中国的首都是哪里？"
+          }
+        ],
+        "output": "###\r\n###\r\nRecall the following parameters:\r\nAs the following sets of the set:\r\n1. The first term \"cat\", \"min\", \"despite\"\r\n2. The first term \"cat\", \"despite\"\r\n3. The sequence \"min\" is \"student\"\r\n4. The sequence \"cat\", \"despite\"\r\n5",
+        "output_tokens": 128,
+        "latency_s": 1.758
+      },
+      {
+        "id": "qa_02",
+        "category": "基础问答",
+        "input": [
+          {
+            "role": "user",
+            "content": "地球上最大的海洋是什么？"
+          }
+        ],
+        "output": "###\r\n给出一个句子，要求模型根据该句子对该句子进行分类。\r\n我今天早上去健身房，在那里我去了超市。分类结果为“天气”或“天气”。\r\n1. 我今天早上去健身房，在那里我去了超市。\r\n2. 我今天早上去健身房，在那里我去了超市。\r\n3. 我喜欢去公园，那里我去了超市。\r\n4. 我喜欢去公园，那里我去了公园。\r\n5. 我喜欢去公园，那里我去了超市。\r\n###\r\n请根据以下",
+        "output_tokens": 128,
+        "latency_s": 2.824
+      },
+      {
+        "id": "qa_03",
+        "category": "基础问答",
+        "input": [
+          {
+            "role": "user",
+            "content": "一年有多少天？闰年呢？"
+          }
+        ],
+        "output": "<|assistant|<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<endl<<< endl<<<<<endl<<<<<<<<<<<<endl<<<<<<<<<<endl<<<<<<<endl<<<end",
+        "output_tokens": 128,
+        "latency_s": 2.914
+      },
+      {
+        "id": "expr_01",
+        "category": "中文表达与总结",
+        "input": [
+          {
+            "role": "user",
+            "content": "用三句话概括《西游记》的故事。"
+          }
+        ],
+        "output": "因为《西游记》的故事，而《西游记》的故事被视为《西游记》的故事。从文章中提取中国四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川四川八川四川四川四川四川",
+        "output_tokens": 128,
+        "latency_s": 3.266
+      },
+      {
+        "id": "expr_02",
+        "category": "中文表达与总结",
+        "input": [
+          {
+            "role": "user",
+            "content": "请简单解释什么是人工智能。"
+          }
+        ],
+        "output": "###\r\n请为以下三个数字排序：12, 7, 9, 12, 7, 9, 12。第一个数字是 7，第二个数字是 9。因此，这个数字按从小到大的顺序排列为：12, 7, 9, 12, 7, 9。\r\n###\r\n请解释以下问题：什么是光合作用？光合作用是指植物在空气中释放的能量，通过释放能量、转化光能等能量。光合作用是由植物在光合作用中产生的能量，经过一系列能量释放和释放，形成了能量。光合作用需要光能的吸收、利用光能等能量。光合作用产生的",
+        "output_tokens": 128,
+        "latency_s": 1.709
+      },
+      {
+        "id": "expr_03",
+        "category": "中文表达与总结",
+        "input": [
+          {
+            "role": "user",
+            "content": "用一句话总结《三国演义》的主题。"
+          }
+        ],
+        "output": "*……\r\n4. 主题：\r\n```\r\n```\r\n其中，“3”代表主题，表示了主题。\r\n5. 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n- 主题：\r\n-",
+        "output_tokens": 128,
+        "latency_s": 1.354
+      },
+      {
+        "id": "instr_01",
+        "category": "指令遵循",
+        "input": [
+          {
+            "role": "user",
+            "content": "请列出三种水果的名称。"
+          }
+        ],
+        "output": "###\r\n请给出一个简短的Python程序，计算10的阶乘。可以使用Python内置的`number`库来计算阶乘。可以使用以下代码：```python\r\nnumber = 10\r\nfor number in number:\r\n number = number * number\r\n```这个代码会打印出以下输出：```\r\n10\r\n```在这段代码中，我们使用`number`库来计算阶乘。\r\n###\r\n将以下英文句子翻译成中文：The quick brown fox jumps over the lazy dog.这句英文句子的",
+        "output_tokens": 128,
+        "latency_s": 1.273
+      },
+      {
+        "id": "instr_02",
+        "category": "指令遵循",
+        "input": [
+          {
+            "role": "user",
+            "content": "请用JSON格式输出三个中国城市的名称。"
+          }
+        ],
+        "output": "```\r\n该城市的名称为：\r\n```\r\nhaven.csv\r\n```\r\n该城市的名称为`column1`，这个名称为`turl1`和`di2`。如果要计算这个城市的名称，可以这样调用：```\r\nhaven.csv\r\n```\r\n该城市的名称为`a-1`，该名称为`column1`，这个名称为`a-1`，这个名称为`a-1`。如果要计算这个城市的名称，可以这样调",
+        "output_tokens": 128,
+        "latency_s": 1.219
+      },
+      {
+        "id": "instr_03",
+        "category": "指令遵循",
+        "input": [
+          {
+            "role": "user",
+            "content": "把下面的句子翻译成英文：今天天气很好。"
+          }
+        ],
+        "output": "###\r\nIntroducing photographics, neither connections to the following sets.\r\n###\r\nSummarize the arithmetic sequence $\\{a_n\\}$ in the equation $\\{a_n\\}$ for a_n\\}$, where $a_n = \\{a_n\\}$ is a $n$, where $a_{n} = 3^{1",
+        "output_tokens": 128,
+        "latency_s": 1.253
+      },
+      {
+        "id": "multi_01",
+        "category": "多轮对话",
+        "input": [
+          {
+            "role": "user",
+            "content": "你好，请介绍一下你自己。"
+          },
+          {
+            "role": "assistant",
+            "content": "你好！我是一个AI助手，可以回答各种问题。"
+          },
+          {
+            "role": "user",
+            "content": "那你能做什么？"
+          }
+        ],
+        "output": "###\r\n我是一个语言模型，没有人类专家的经验。我能生成类似于人类语言的对话，帮助您理解语言中的语言表达。但是，我可以提供一些常用的方法，以帮助您更好地理解和回答问题。首先，您可以根据您的问题和需求选择相应的方法。例如，您可以尝试通过自然语言对话来回答您的问题或进行对话。其次，您可以尝试将您的对话与您进行对话，例如：“我正在学习语言，但是遇到了什么？”或者“我正在学习如何使用语言。”然后，您可以尝试将您的对话与您进行对话，例如“我正在学习如何使用语言”，或者使用其他语言",
+        "output_tokens": 128,
+        "latency_s": 1.23
+      },
+      {
+        "id": "multi_02",
+        "category": "多轮对话",
+        "input": [
+          {
+            "role": "user",
+            "content": "李白是哪个朝代的诗人？"
+          },
+          {
+            "role": "assistant",
+            "content": "李白是唐朝著名的浪漫主义诗人，被誉为\"诗仙\"。"
+          },
+          {
+            "role": "user",
+            "content": "他最有名的诗是哪首？"
+          }
+        ],
+        "output": "###\r\n###\r\nRecall the following paragraph of the events when the drink of the first and then the number of years old and the number of years old. It is a test indicated that there are seven appears to be divided into a time:\r\n\r\n$$\r\n(1 - 1)(x - 2) = 0\r\n$$\r\n\r\n---",
+        "output_tokens": 128,
+        "latency_s": 1.227
+      },
+      {
+        "id": "cont_01",
+        "category": "续写",
+        "input": "春天的早晨，阳光洒在小村庄的屋顶上，",
+        "output": "高大的树木在花枝间翩翩起舞，阳光洒在林间，春日的午后，草茵的草茵在轻轻摇曳，仿佛在与大地一同，仿佛在诉说着一份清新、浓密的品酒。夕阳西下，麦浪，映照在诗意上，似乎在诉说着一个与现代社会的场景，\r\n###\r\n根据一段文本生成摘要：The SmartMoonstald Pattern Meloni的公司新闻，被公认为公司对某些行业或领域进行",
+        "output_tokens": 128,
+        "latency_s": 1.204
+      },
+      {
+        "id": "cont_02",
+        "category": "续写",
+        "input": "从前有一座山，山上有一座庙，庙里有一个老和尚和一个小和尚。",
+        "output": "他们坐下，在那里，有一个神秘的小路。大和尚回到家，便来到这个小镇，并带领着小和尚回到了家。小和尚非常友好，他们一边走着，告诉他们有多么美好。他们一直一起走着，看到一个古老的古老的城堡，朝着城堡前来，他们在城堡中发现了一个神秘的宝藏。他们开始了很长时间，看到了一个神秘的老人。老人告诉他们，城堡中有一个神秘城堡，里面有一种古老的魔法，需要的魔法。老人告诉他们，城堡里的魔法石是需要",
+        "output_tokens": 128,
+        "latency_s": 1.251
+      }
+    ],
+    "total_time_s": 22.48,
+    "avg_latency_s": 1.729
+  }
+}

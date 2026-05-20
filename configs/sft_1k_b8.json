@@ -1,0 +1,53 @@
+{
+  "name": "sft_1k_b8",
+  "description": "Full-param SFT: 1000 steps, batch=8. Fair comparison with sft_lora_1k_b8.",
+  "tokenizer": {
+    "vocab_path": "outputs/tokenizer_full_clean/vocab.json",
+    "merges_path": "outputs/tokenizer_full_clean/merge.txt",
+    "special_tokens": ["<|endoftext|>"]
+  },
+  "model": {
+    "vocab_size": 6400,
+    "context_length": 512,
+    "d_model": 512,
+    "num_layers": 8,
+    "num_heads": 8,
+    "d_ff": 1344,
+    "rope_theta": 1000000.0,
+    "use_rms_norm": true,
+    "norm_mode": "pre",
+    "ffn_type": "swiglu"
+  },
+  "lora": {
+    "enabled": false
+  },
+  "optimizer": {
+    "lr": 2e-5,
+    "min_lr": 2e-6,
+    "warmup_steps": 100,
+    "weight_decay": 0.1
+  },
+  "training": {
+    "batch_size": 8,
+    "gradient_accumulation_steps": 1,
+    "max_steps": 1000,
+    "eval_interval": 200,
+    "save_interval": 1000,
+    "device": "cuda",
+    "seed": 42,
+    "out_dir": "outputs/sft_1k_b8",
+    "init_checkpoint": "outputs/pretrain_full_corpus/ckpt_final.pt",
+    "resume": false
+  },
+  "data": {
+    "train_data_path": "data/sft_t2t_mini.jsonl",
+    "valid_data_path": "data/sft_valid.jsonl",
+    "system_prompt_ratio": 0.1,
+    "eos_token": "<|endoftext|>"
+  },
+  "logging": {
+    "wandb_project": "micro-llm",
+    "run_name": "sft_1k_b8",
+    "mode": "disabled"
+  }
+}
